@@ -6,7 +6,7 @@ const BlogCards = ({ mode }) => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=e09d9f7d5a38417fac4d41c193572a25");
+      const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${import.meta.env.VITE_APIKEY}`);
       const data = await response.json();
       setnews(data.articles);
     } catch (error) {
